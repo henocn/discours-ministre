@@ -18,7 +18,7 @@ export default function SlideIntro() {
         {/* LOGO */}
         <div className="intro__logo-wrap">
           <img
-            src="/MDPISE.jpeg"
+            src="/MDPISE.png"
             alt="Logo MDPISE"
             className="intro__logo"
           />

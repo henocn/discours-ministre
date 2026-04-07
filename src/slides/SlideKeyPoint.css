@@ -81,6 +81,22 @@
   z-index: 1;
 }
 
+/* ─── CARTE CONTENT (plus grande, sans icône) ────────────── */
+.keypoint__card--content {
+  max-width: 760px;
+  padding: 56px 52px;
+}
+
+.keypoint__card--content .keypoint__titre {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+}
+
+.keypoint__card--content .keypoint__desc {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  max-width: 680px;
+}
+
 /* ─── ICÔNE ──────────────────────────────────────────────── */
 .keypoint__icon-wrap {
   width: 80px; height: 80px;

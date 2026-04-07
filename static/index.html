@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discours MDPISE - Assemblée parlementaire de la Francophonie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Fond particules -->
+  <div class="bg-particles"></div>
+
+  <!-- Container des slides -->
+  <div id="slides-container"></div>
+
+  <!-- Navigation -->
+  <div class="nav-arrows">
+    <button id="btn-prev" class="nav-btn nav-btn--prev" aria-label="Précédent">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button id="btn-next" class="nav-btn nav-btn--next" aria-label="Suivant">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Points de progression -->
+  <div class="progress-dots" id="progress-dots"></div>
+
+  <!-- Compteur -->
+  <div class="slide-counter" id="slide-counter">1 / 5</div>
+
+  <!-- Scripts -->
+  <script src="js/slides.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
