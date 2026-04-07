@@ -73,18 +73,18 @@
 
 /* ─── GRILLE ─────────────────────────────────────────────── */
 .slide-video__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 960px;
   z-index: 1;
   animation: fadeUp 0.7s ease 0.15s both;
 }
 
 @media (max-width: 640px) {
   .slide-video__grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -92,7 +92,10 @@
 .video-card {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .video-card__label {
@@ -108,9 +111,10 @@
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(0,0,0,0.4);
-  cursor: pointer;
   aspect-ratio: 16/9;
   position: relative;
+  width: 100%;
+  max-width: 720px;
 }
 
 .video-card__player {

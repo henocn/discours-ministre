@@ -16,6 +16,7 @@ function renderSlide(slide, keypointIndex) {
     case "intro":
       return <SlideIntro />;
     case "keypoint":
+    case "content":
       return <SlideKeyPoint slide={slide} index={keypointIndex} />;
     case "video":
       return <SlideVideo slide={slide} />;

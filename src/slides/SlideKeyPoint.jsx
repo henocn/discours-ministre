@@ -12,8 +12,9 @@ import "./SlideKeyPoint.css";
  *  - Description courte
  */
 export default function SlideKeyPoint({ slide, index }) {
-  const { icon, chiffre, unite, titre, description, couleurAccent } = slide;
+  const { icon, chiffre, unite, titre, description, couleurAccent, type } = slide;
   const numRef = useRef(null);
+  const hasMetric = chiffre != null && chiffre !== "";
 
   // ─── Compteur animé ───────────────────────────────────────
   useEffect(() => {
@@ -67,24 +68,30 @@ export default function SlideKeyPoint({ slide, index }) {
       <div className="keypoint__bg-ring keypoint__bg-ring--2" />
       <div className="keypoint__bg-glow" />
 
-      {/* ─── INDEX ─── */}
-      <span className="keypoint__index">
-        {String(index).padStart(2, "0")}
-      </span>
+      {/* ─── INDEX (uniquement pour keypoint) ─── */}
+      {index > 0 && type !== 'content' && (
+        <span className="keypoint__index">
+          {String(index).padStart(2, "0")}
+        </span>
+      )}
 
       {/* ─── CARTE CENTRALE ─── */}
-      <div className="keypoint__card">
+      <div className={`keypoint__card ${type === 'content' ? 'keypoint__card--content' : ''}`}>
 
-        {/* ICÔNE */}
-        <div className="keypoint__icon-wrap">
-          <span className="keypoint__icon" role="img" aria-label={titre}>{icon}</span>
-        </div>
+        {/* ICÔNE (conditionnel) */}
+        {type !== 'content' && icon && (
+          <div className="keypoint__icon-wrap">
+            <span className="keypoint__icon" role="img" aria-label={titre}>{icon}</span>
+          </div>
+        )}
 
-        {/* CHIFFRE */}
-        <div className="keypoint__metric">
-          <span className="keypoint__chiffre" ref={numRef}>{chiffre}</span>
-          <span className="keypoint__unite">{unite}</span>
-        </div>
+        {/* CHIFFRE (conditionnel) */}
+        {hasMetric && type !== 'content' && (
+          <div className="keypoint__metric">
+            <span className="keypoint__chiffre" ref={numRef}>{chiffre}</span>
+            <span className="keypoint__unite">{unite}</span>
+          </div>
+        )}
 
         {/* SÉPARATEUR */}
         <div className="keypoint__sep" />

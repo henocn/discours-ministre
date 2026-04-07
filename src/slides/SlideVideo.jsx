@@ -1,16 +1,17 @@
 // slides/SlideVideo.jsx
-import React, { useRef } from "react";
+import React from "react";
 import "./SlideVideo.css";
 
-export default function SlideVideo({ slide }) {
-  const { titre, sousTitre, videos } = slide;
-  const refs = [useRef(null), useRef(null)];
+// Extrait l'ID YouTube d'une URL
+function extractYouTubeId(url) {
+  if (!url) return null;
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
 
-  const togglePlay = (i) => {
-    const video = refs[i].current;
-    if (!video) return;
-    video.paused ? video.play() : video.pause();
-  };
+export default function SlideVideo({ slide }) {
+  const { videos } = slide;
 
   return (
     <div className="slide-video">
@@ -18,28 +19,27 @@ export default function SlideVideo({ slide }) {
       {/* ─── FOND ─── */}
       <div className="slide-video__bg" />
 
-      {/* ─── EN-TÊTE ─── */}
-      <div className="slide-video__header">
-        <div className="slide-video__icon">▶</div>
-        <div>
-          <h2 className="slide-video__titre">{titre}</h2>
-          <p className="slide-video__sous">{sousTitre}</p>
-        </div>
-      </div>
-
       {/* ─── GRILLE VIDÉOS ─── */}
       <div className="slide-video__grid">
-        {videos.map((v, i) => (
+        {videos.map((v) => (
           <div key={v.id} className="video-card">
 
             {/* LABEL */}
             <p className="video-card__label">{v.label}</p>
 
             {/* PLAYER */}
-            <div className="video-card__player-wrap" onClick={() => togglePlay(i)}>
-              {v.src ? (
+            <div className="video-card__player-wrap">
+              {v.youtubeId || extractYouTubeId(v.src) ? (
+                <iframe
+                  className="video-card__player"
+                  src={`https://www.youtube.com/embed/${v.youtubeId || extractYouTubeId(v.src)}`}
+                  title={v.label}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : v.src ? (
                 <video
-                  ref={refs[i]}
                   className="video-card__player"
                   src={v.src}
                   poster={v.poster || undefined}
@@ -60,9 +60,6 @@ export default function SlideVideo({ slide }) {
                 </div>
               )}
             </div>
-
-            {/* DESCRIPTION */}
-            <p className="video-card__desc">{v.description}</p>
 
           </div>
         ))}

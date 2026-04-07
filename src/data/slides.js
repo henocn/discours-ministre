@@ -4,15 +4,14 @@
 // ─────────────────────────────────────────────────────────────
 
 export const MINISTRE = {
-  nom:       "Dr Arthur TRIMUA",           // ← remplace par le bon nom
-  titre:     "Ministère Délégué chargé de la Promotion des Investissements et de la Souveraineté économique",
+  nom:       "Dr Arthur TRIMUA",
+  titre:     "Ministre Délégué chargé de la Promotion des Investissements et de la Souveraineté économique",
   date:      "Lomé, Avril 2025",
-  discours:  "Intervention du Ministre – Assemblée parlementaire de la Francophonie ",
+  discours:  "Intervention du Ministre – Assemblée parlementaire de la Francophonie",
 };
 
 // ─── POINTS CLEFS ────────────────────────────────────────────
-// type: "intro" | "keypoint" | "video"
-// Pour les keypoints : icon (emoji ou texte), chiffre, unite, titre, description
+// type: "intro" | "keypoint" | "video" | "content"
 
 export const SLIDES = [
   {
@@ -22,89 +21,47 @@ export const SLIDES = [
 
   {
     id: 1,
-    type: "keypoint",
-    icon: "🏭",
-    chiffre: "450",
-    unite: "entreprises",
-    titre: "Industries soutenues",
-    description:
-      "Le gouvernement a accompagné plus de 450 entreprises industrielles à travers des mécanismes de financement, de formation et d'encadrement technique.",
-    couleurAccent: "#008751",
+    type: "video",
+    videos: [
+      {
+        id: "v1",
+        label: "Évolution des lois économiques et création de la Plateforme Industrielle d'Adétikopé",
+        youtubeId: "yhIB71e9Sdc",
+        src: "",
+        poster: "",
+      },
+    ],
   },
 
   {
     id: 2,
-    type: "keypoint",
-    icon: "👷",
-    chiffre: "120 000",
-    unite: "emplois créés",
-    titre: "Création d'emplois",
-    description:
-      "Grâce aux programmes nationaux d'insertion professionnelle, plus de 120 000 jeunes togolais ont accédé à un emploi décent depuis 2020.",
-    couleurAccent: "#FFCE00",
-  },
-
-  {
-    id: 3,
-    type: "keypoint",
-    icon: "📈",
-    chiffre: "8,2%",
-    unite: "de croissance",
-    titre: "Croissance du secteur industriel",
-    description:
-      "Le secteur industriel togolais affiche une croissance soutenue de 8,2% en 2024, portée par les investissements publics et privés stratégiques.",
-    couleurAccent: "#D21034",
-  },
-
-  {
-    id: 4,
-    type: "keypoint",
-    icon: "🎓",
-    chiffre: "35 000",
-    unite: "bénéficiaires",
-    titre: "Formation professionnelle",
-    description:
-      "Les centres de formation professionnelle ont formé 35 000 personnes dans des métiers porteurs : numérique, agro-industrie, BTP et artisanat.",
+    type: "content",
+    icon: "🏭",
+    titre: "La Plateforme Industrielle d'Adétikopé",
+    description: "Issue du Code des Investissements, la PIA illustre comment un cadre juridique clair et stable peut transformer un terrain en un espace économique dynamique, attirer les investisseurs et ouvrir des perspectives d'emploi pour les jeunes.",
     couleurAccent: "#008751",
   },
 
   {
-    id: 5,
-    type: "keypoint",
-    icon: "💼",
-    chiffre: "72",
-    unite: "milliards FCFA",
-    titre: "Investissements mobilisés",
-    description:
-      "72 milliards de francs CFA ont été mobilisés auprès des partenaires au développement pour financer les projets d'emploi et d'industrialisation.",
-    couleurAccent: "#FFCE00",
-  },
-
-  {
-    id: 6,
-    type: "keypoint",
-    icon: "🌍",
-    chiffre: "28",
-    unite: "préfectures",
-    titre: "Couverture nationale",
-    description:
-      "Les actions du ministère couvrent désormais les 28 préfectures du Togo, assurant une répartition équitable des opportunités économiques.",
-    couleurAccent: "#D21034",
-  },
-
-  {
-    id: 7,
+    id: 3,
     type: "video",
-    titre: "Vidéo retraçant l’évolution des lois économiques et la création de la Plateforme Industrielle d’Adétikopé.",
-    sousTitre: "Découvrez l'impact des programmes du MDPISE sur le terrain",
     videos: [
       {
         id: "v2",
-        label: "Formation & Insertion — Lomé Tech",
+        label: "Femmes travaillant sur la Plateforme Industrielle d'Adétikopé",
+        youtubeId: "yhIB71e9Sdc",
         src: "",
         poster: "",
-        description: "Les jeunes togolais témoignent de leur parcours de formation numérique.",
       },
     ],
+  },
+
+  {
+    id: 4,
+    type: "content",
+    icon: "🌍",
+    titre: "Une vision pour l'avenir",
+    description: "Au-delà des infrastructures et des lois, le développement économique doit être un développement humain. Le Togo s'engage pour l'inclusion, l'employabilité des jeunes et la création de zones économiques spéciales pour démultiplier les opportunités sur tout le territoire.",
+    couleurAccent: "#FFCE00",
   },
 ];
