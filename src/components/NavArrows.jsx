@@ -37,13 +37,6 @@ export default function NavArrows({ onPrev, onNext, canPrev, canNext, current, t
         <span className="nav-counter__sep">/</span>
         <span className="nav-counter__total">{String(total).padStart(2, "0")}</span>
       </div>
-
-      {/* ─── HINT CLAVIER (visible seulement au départ) ─── */}
-      {current === 0 && (
-        <div className="nav-hint">
-          <kbd>←</kbd> <kbd>→</kbd> ou cliquez les flèches
-        </div>
-      )}
     </>
   );
 }

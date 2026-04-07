@@ -60,12 +60,6 @@ export default function SlideIntro() {
         {/* DATE */}
         <p className="intro__date">{MINISTRE.date}</p>
 
-        {/* PROMPT NAVIGATION */}
-        <div className="intro__prompt">
-          <span className="intro__prompt-arrow">→</span>
-          <span>Commencer la présentation</span>
-        </div>
-
       </div>
 
       {/* ─── BANDES DÉCO BAS ─── */}

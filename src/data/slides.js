@@ -4,10 +4,10 @@
 // ─────────────────────────────────────────────────────────────
 
 export const MINISTRE = {
-  nom:       "Prof. Robert Dussey",           // ← remplace par le bon nom
-  titre:     "Ministre du Développement et de la Productivité Industrielle et du Secteur de l'Emploi",
+  nom:       "Dr Arthur TRIMUA",           // ← remplace par le bon nom
+  titre:     "Ministère Délégué chargé de la Promotion des Investissements et de la Souveraineté économique",
   date:      "Lomé, Avril 2025",
-  discours:  "Discours sur l'Emploi, l'Industrie et la Croissance Inclusive au Togo",
+  discours:  "Intervention du Ministre – Assemblée parlementaire de la Francophonie ",
 };
 
 // ─── POINTS CLEFS ────────────────────────────────────────────
