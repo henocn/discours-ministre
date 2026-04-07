@@ -95,17 +95,9 @@ export const SLIDES = [
   {
     id: 7,
     type: "video",
-    titre: "Reportages & Témoignages",
+    titre: "Vidéo retraçant l’évolution des lois économiques et la création de la Plateforme Industrielle d’Adétikopé.",
     sousTitre: "Découvrez l'impact des programmes du MDPISE sur le terrain",
     videos: [
-      {
-        id: "v1",
-        label: "Programme HIMO — Emplois ruraux",
-        // ← Remplace src par le chemin réel de ta vidéo (ex: /videos/himo.mp4)
-        src: "",
-        poster: "",
-        description: "Retour sur les chantiers à haute intensité de main d'œuvre dans les régions.",
-      },
       {
         id: "v2",
         label: "Formation & Insertion — Lomé Tech",

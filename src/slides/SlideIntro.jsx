@@ -12,34 +12,17 @@ export default function SlideIntro() {
         <span /><span /><span /><span /><span />
       </div>
 
-      {/* ─── CERCLE DÉCO FOND ─── */}
-      <div className="intro__bg-circle intro__bg-circle--1" />
-      <div className="intro__bg-circle intro__bg-circle--2" />
-
       {/* ─── CONTENU PRINCIPAL ─── */}
       <div className="intro__body">
 
         {/* LOGO */}
         <div className="intro__logo-wrap">
-          {/*
-            Remplace le src ci-dessous par le chemin de ton logo :
-            ex: src="/logo-mdpise.png"
-            Si tu n'as pas encore le fichier, l'initiale s'affiche en fallback.
-          */}
           <img
-            src="/logo-mdpise.png"
+            src="/MDPISE.jpeg"
             alt="Logo MDPISE"
             className="intro__logo"
-            onError={(e) => { e.target.style.display = "none"; }}
           />
-          {/* Fallback si logo absent */}
-          <div className="intro__logo-fallback">
-            <span>MDPISE</span>
-          </div>
         </div>
-
-        {/* LABEL MINISTÈRE */}
-        <p className="intro__label">MINISTÈRE DU DÉVELOPPEMENT ET DE LA PRODUCTIVITÉ<br />INDUSTRIELLE ET DU SECTEUR DE L'EMPLOI</p>
 
         {/* SÉPARATEUR */}
         <div className="intro__divider">
