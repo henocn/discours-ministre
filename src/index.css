@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ─── VARIABLES MDPISE / TOGO ─────────────────────────────── */
+:root {
+  --vert:        #008751;
+  --vert-clair:  #00a863;
+  --vert-fonce:  #005c38;
+  --jaune:       #FFCE00;
+  --jaune-doux:  #ffe566;
+  --rouge:       #D21034;
+  --blanc:       #FFFFFF;
+  --fond:        #071a0e;
+  --fond-carte:  rgba(0, 135, 81, 0.08);
+  --bordure:     rgba(255, 206, 0, 0.25);
+  --texte-clair: rgba(255, 255, 255, 0.85);
+  --texte-dim:   rgba(255, 255, 255, 0.45);
+
+  --font-titre:  'Playfair Display', serif;
+  --font-corps:  'Outfit', sans-serif;
+
+  --transition:  0.55s cubic-bezier(0.77, 0, 0.175, 1);
+  --radius:      16px;
+}
+
+/* ─── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--fond);
+  color: var(--blanc);
+  font-family: var(--font-corps);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--vert-clair); border-radius: 2px; }
+
+/* ─── UTILITAIRES ─────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* ─── ANIMATIONS GLOBALES ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.92); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes rotateBorder {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ─── FOND ANIMÉ GLOBAL ───────────────────────────────────── */
+.bg-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-particles::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,135,81,0.18) 0%, transparent 70%);
+  top: -150px; left: -150px;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.bg-particles::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(210,16,52,0.10) 0%, transparent 70%);
+  bottom: -100px; right: -100px;
+  animation: pulse 10s ease-in-out infinite reverse;
+}
+
+/* ─── LIGNE DÉCORATIVE TOGO ───────────────────────────────── */
+.togo-stripe {
+  display: flex;
+  height: 4px;
+  width: 100%;
+}
+.togo-stripe span {
+  flex: 1;
+}
+.togo-stripe span:nth-child(1) { background: var(--vert); }
+.togo-stripe span:nth-child(2) { background: var(--jaune); }
+.togo-stripe span:nth-child(3) { background: var(--rouge); }
+.togo-stripe span:nth-child(4) { background: var(--jaune); }
+.togo-stripe span:nth-child(5) { background: var(--vert); }

@@ -1,0 +1,97 @@
+/* components/NavArrows.css */
+
+/* ─── FLÈCHES ──────────────────────────────────────────────── */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--bordure);
+  background: rgba(0, 135, 81, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--blanc);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.nav-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-arrow--left  { left: 20px; }
+.nav-arrow--right { right: 20px; }
+
+.nav-arrow:hover:not(:disabled) {
+  background: rgba(0, 135, 81, 0.45);
+  border-color: var(--vert-clair);
+  box-shadow: 0 0 24px rgba(0, 135, 81, 0.4);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav-arrow--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── COMPTEUR ──────────────────────────────────────────────── */
+.nav-counter {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 100;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-corps);
+}
+
+.nav-counter__current {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--jaune);
+}
+
+.nav-counter__sep {
+  font-size: 0.85rem;
+  color: var(--texte-dim);
+}
+
+.nav-counter__total {
+  font-size: 0.85rem;
+  color: var(--texte-dim);
+}
+
+/* ─── HINT CLAVIER ──────────────────────────────────────────── */
+.nav-hint {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--texte-dim);
+  font-size: 0.75rem;
+  font-family: var(--font-corps);
+  animation: fadeUp 1s ease 2s both;
+}
+
+.nav-hint kbd {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  color: var(--blanc);
+}

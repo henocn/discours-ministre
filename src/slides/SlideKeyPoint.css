@@ -1,0 +1,173 @@
+/* slides/SlideKeyPoint.css */
+
+.keypoint {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%,
+    rgba(0,135,81,0.12) 0%, transparent 65%),
+    var(--fond);
+}
+
+/* ─── FOND DÉCO ──────────────────────────────────────────── */
+.keypoint__bg-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid;
+}
+.keypoint__bg-ring--1 {
+  width: 520px; height: 520px;
+  border-color: rgba(0,135,81,0.08);
+  animation: rotateBorder 25s linear infinite;
+}
+.keypoint__bg-ring--2 {
+  width: 380px; height: 380px;
+  border-color: rgba(255,206,0,0.06);
+  animation: rotateBorder 18s linear infinite reverse;
+}
+
+.keypoint__bg-glow {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--accent) 12%, transparent) 0%,
+    transparent 70%);
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* ─── INDEX ──────────────────────────────────────────────── */
+.keypoint__index {
+  position: absolute;
+  top: 36px;
+  left: 48px;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: var(--font-titre);
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── CARTE ──────────────────────────────────────────────── */
+.keypoint__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 580px;
+  width: 90%;
+  padding: 48px 40px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 0 1px rgba(0,135,81,0.08),
+    0 24px 80px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  animation: fadeUp 0.6s ease both;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── ICÔNE ──────────────────────────────────────────────── */
+.keypoint__icon-wrap {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent);
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+
+.keypoint__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+/* ─── METRIC ─────────────────────────────────────────────── */
+.keypoint__metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.keypoint__chiffre {
+  font-family: var(--font-titre);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, #fff));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* shimmer */
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite, fadeUp 0.6s ease 0.2s both;
+}
+
+.keypoint__unite {
+  font-size: 0.85rem;
+  color: var(--texte-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ─── SÉPARATEUR ─────────────────────────────────────────── */
+.keypoint__sep {
+  width: 60px;
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: fadeIn 0.6s ease 0.3s both;
+}
+
+/* ─── TITRE ──────────────────────────────────────────────── */
+.keypoint__titre {
+  font-family: var(--font-titre);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--blanc);
+  animation: fadeUp 0.6s ease 0.35s both;
+}
+
+/* ─── DESCRIPTION ────────────────────────────────────────── */
+.keypoint__desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--texte-clair);
+  max-width: 440px;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+/* ─── BANDE ACCENT ───────────────────────────────────────── */
+.keypoint__accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent) 30%,
+    var(--jaune) 50%,
+    var(--accent) 70%,
+    transparent 100%);
+  animation: shimmer 3s linear infinite;
+  background-size: 200% auto;
+}

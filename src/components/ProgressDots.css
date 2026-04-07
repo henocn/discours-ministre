@@ -1,0 +1,35 @@
+/* components/ProgressDots.css */
+
+.progress-dots {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.progress-dot--active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--jaune);
+  box-shadow: 0 0 10px rgba(255, 206, 0, 0.5);
+}
