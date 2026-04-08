@@ -53,7 +53,7 @@ export const SLIDES = [
   {
     id: 3,
     type: "keypoint",
-    chiffre: "130 Mds",
+    chiffre: "130 Md",
     suffixe: "",
     unite: " FCFA",
     icon: "Landmark",
@@ -169,9 +169,9 @@ export const SLIDES = [
   {
     id: 13,
     type: "keypoint",
-    chiffre: "400",
+    chiffre: "400 M",
     suffixe: "",
-    unite: "millions",
+    unite: "",
     icon: "Users",
     titre: "À la recherche d'emploi d'ici 2030",
     description: "D'ici 2030, plus de 400 millions de jeunes chercheront un emploi sur notre continent.",
@@ -182,9 +182,9 @@ export const SLIDES = [
   {
     id: 14,
     type: "keypoint",
-    chiffre: "600",
+    chiffre: "600 M",
     suffixe: "",
-    unite: "millions d'emplois",
+    unite: "d'emplois",
     icon: "Briefcase",
     titre: "Emplois à créer d'ici 2030",
     description: "Près de 600 millions d'emplois devront être créés pour répondre à cette dynamique démographique.",
@@ -208,8 +208,8 @@ export const SLIDES = [
   {
     id: 16,
     type: "keypoint",
-    chiffre: "1",
-    suffixe: " sur 3",
+    chiffre: "1 sur 3",
+    suffixe: "",
     unite: "jeunes",
     icon: "AlertTriangle",
     titre: "Sous-emploi",
