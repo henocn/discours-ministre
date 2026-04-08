@@ -9,7 +9,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 30% 30%, rgba(0,135,81,0.18) 0%, transparent 60%),
+  background: radial-gradient(ellipse at 30% 30%, color-mix(in srgb, var(--vert) 18%, transparent) 0%, transparent 60%),
               radial-gradient(ellipse at 70% 70%, rgba(210,16,52,0.08) 0%, transparent 60%),
               var(--fond);
 }
@@ -45,7 +45,7 @@
 }
 .intro__bg-circle--1 {
   width: 500px; height: 500px;
-  border: 1px solid rgba(0,135,81,0.12);
+  border: 1px solid color-mix(in srgb, var(--vert) 12%, transparent);
   top: -200px; left: -200px;
   animation: rotateBorder 30s linear infinite;
 }
@@ -70,8 +70,8 @@
 
 /* ─── LOGO ───────────────────────────────────────────────── */
 .intro__logo-wrap {
-  width: 175px;
-  height: 175px;
+  width: 225px;
+  height: 225px;
   display: flex;
   align-items: center;
   justify-content: center;

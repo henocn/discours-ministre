@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   background: radial-gradient(ellipse at 50% 40%,
-    rgba(0,135,81,0.12) 0%, transparent 65%),
+    color-mix(in srgb, var(--vert) 12%, transparent) 0%, transparent 65%),
     var(--fond);
 }
 
@@ -23,7 +23,7 @@
 }
 .keypoint__bg-ring--1 {
   width: 520px; height: 520px;
-  border-color: rgba(0,135,81,0.08);
+  border-color: color-mix(in srgb, var(--vert) 8%, transparent);
   animation: rotateBorder 25s linear infinite;
 }
 .keypoint__bg-ring--2 {
@@ -73,7 +73,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow:
-    0 0 0 1px rgba(0,135,81,0.08),
+    0 0 0 1px color-mix(in srgb, var(--vert) 8%, transparent),
     0 24px 80px rgba(0,0,0,0.4),
     inset 0 1px 0 rgba(255,255,255,0.05);
   animation: fadeUp 0.6s ease both;

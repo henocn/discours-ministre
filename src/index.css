@@ -2,14 +2,14 @@
 
 /* ─── VARIABLES MDPISE / TOGO ─────────────────────────────── */
 :root {
-  --vert:        #008751;
+  --vert:        #3b9772;
   --vert-clair:  #00a863;
-  --vert-fonce:  #005c38;
+  --vert-fonce:  #005c39bb;
   --jaune:       #FFCE00;
   --jaune-doux:  #ffe566;
   --rouge:       #D21034;
   --blanc:       #FFFFFF;
-  --fond:        #071a0e;
+  --fond:        #3d7953;
   --fond-carte:  rgba(0, 135, 81, 0.08);
   --bordure:     rgba(255, 206, 0, 0.25);
   --texte-clair: rgba(255, 255, 255, 0.85);
@@ -78,35 +78,6 @@ html, body, #root {
 @keyframes rotateBorder {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-/* ─── FOND ANIMÉ GLOBAL ───────────────────────────────────── */
-.bg-particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.bg-particles::before {
-  content: '';
-  position: absolute;
-  width: 600px; height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,135,81,0.18) 0%, transparent 70%);
-  top: -150px; left: -150px;
-  animation: pulse 8s ease-in-out infinite;
-}
-
-.bg-particles::after {
-  content: '';
-  position: absolute;
-  width: 500px; height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(210,16,52,0.10) 0%, transparent 70%);
-  bottom: -100px; right: -100px;
-  animation: pulse 10s ease-in-out infinite reverse;
 }
 
 /* ─── LIGNE DÉCORATIVE TOGO ───────────────────────────────── */
