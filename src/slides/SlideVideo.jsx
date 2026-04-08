@@ -15,6 +15,9 @@ export default function SlideVideo({ slide }) {
 
   return (
     <div className="slide-video">
+      <div className="togo-stripe intro__stripe-top">
+        <span /><span /><span /><span /><span />
+      </div>
 
       {/* ─── FOND ─── */}
       <div className="slide-video__bg" />

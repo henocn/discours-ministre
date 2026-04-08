@@ -62,6 +62,9 @@ export default function SlideKeyPoint({ slide, index }) {
 
   return (
     <div className="keypoint" style={{ "--accent": couleurAccent }}>
+      <div className="togo-stripe intro__stripe-top">
+        <span /><span /><span /><span /><span />
+      </div>
 
       {/* ─── FOND DÉCO ─── */}
       <div className="keypoint__bg-ring keypoint__bg-ring--1" />
@@ -104,8 +107,11 @@ export default function SlideKeyPoint({ slide, index }) {
 
       </div>
 
-      {/* ─── BANDE ACCENT BAS ─── */}
-      <div className="keypoint__accent-bar" />
+      {/* ─── BANDE BASSE ─── */}
+      <div className="slide-video__stripe">
+        <span /><span /><span /><span /><span />
+      </div>
+
 
     </div>
   );
