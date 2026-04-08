@@ -1,5 +1,6 @@
 // slides/SlideKeyPoint.jsx
 import React, { useEffect, useRef } from "react";
+import * as LucideIcons from "lucide-react";
 import "./SlideKeyPoint.css";
 
 /**
@@ -12,52 +13,15 @@ import "./SlideKeyPoint.css";
  *  - Description courte
  */
 export default function SlideKeyPoint({ slide, index }) {
-  const { icon, chiffre, unite, titre, description, couleurAccent, type } = slide;
+  const { icon, chiffre, suffixe, unite, titre, description, couleurAccent, type } = slide;
   const numRef = useRef(null);
   const hasMetric = chiffre != null && chiffre !== "";
 
-  // ─── Compteur animé ───────────────────────────────────────
+  // ─── Compteur statique (sans animation) ───────────────────
   useEffect(() => {
     const el = numRef.current;
     if (!el) return;
-
-    // Extrait le nombre (retire les non-chiffres sauf virgule/point)
-    const rawNum = parseFloat(chiffre.replace(/[^0-9.,]/g, "").replace(",", "."));
-    if (isNaN(rawNum)) {
-      el.textContent = chiffre;
-      return;
-    }
-
-    const suffix  = chiffre.replace(/[0-9.,\s]/g, "");  // ex: "%", " milliards"
-    const isFloat = chiffre.includes(",") || chiffre.includes(".");
-    const duration = 1800; // ms
-    const steps    = 60;
-    const interval = duration / steps;
-    let step = 0;
-
-    el.textContent = "0" + suffix;
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = rawNum * eased;
-
-      if (isFloat) {
-        el.textContent = current.toFixed(1) + suffix;
-      } else if (current >= 1000) {
-        el.textContent = Math.floor(current).toLocaleString("fr-FR") + suffix;
-      } else {
-        el.textContent = Math.floor(current) + suffix;
-      }
-
-      if (step >= steps) {
-        clearInterval(timer);
-        el.textContent = chiffre; // affiche la valeur exacte
-      }
-    }, interval);
-
-    return () => clearInterval(timer);
+    el.textContent = chiffre;
   }, [chiffre]);
 
   return (
@@ -81,10 +45,14 @@ export default function SlideKeyPoint({ slide, index }) {
       {/* ─── CARTE CENTRALE ─── */}
       <div className={`keypoint__card ${type === 'content' ? 'keypoint__card--content' : ''}`}>
 
-        {/* ICÔNE (conditionnel) */}
+        {/* ICÔNE LUCIDE (conditionnel) */}
         {type !== 'content' && icon && (
           <div className="keypoint__icon-wrap">
-            <span className="keypoint__icon" role="img" aria-label={titre}>{icon}</span>
+            {LucideIcons[icon] ? React.createElement(LucideIcons[icon], { 
+              className: "keypoint__icon",
+              size: 32,
+              strokeWidth: 1.5
+            }) : <span className="keypoint__icon-fallback">{icon}</span>}
           </div>
         )}
 
@@ -92,6 +60,7 @@ export default function SlideKeyPoint({ slide, index }) {
         {hasMetric && type !== 'content' && (
           <div className="keypoint__metric">
             <span className="keypoint__chiffre" ref={numRef}>{chiffre}</span>
+            {suffixe && <span className="keypoint__suffixe">{suffixe}</span>}
             <span className="keypoint__unite">{unite}</span>
           </div>
         )}
